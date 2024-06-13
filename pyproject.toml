@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "dbt-intro"
 version = "0.1.0"
-description = ""
-authors = ["Steph Samson <steph.samson@contiamo.com>"]
+description = "A repo demonstrating a very simple dbt project with Snowflake"
+authors = ["Contiamo <info@contiamo.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
