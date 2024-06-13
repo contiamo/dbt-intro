@@ -13,3 +13,4 @@ snowflake.key
 snowflake.p8
 .env
 target/
+dbt_packages/
