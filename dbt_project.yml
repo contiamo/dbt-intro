@@ -22,3 +22,6 @@ models:
     staging:  # all models in `models/staging/` path
       +materialized: view  # materialize all models in jaffle_shop as views...
       +database: "STAGING" # ... then store in the STAGING database
+    enriched:
+      +materialized: view
+      +database: "ENRICHED"

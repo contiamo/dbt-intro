@@ -1,3 +1,5 @@
+{{ config(schema="stripe") }}
+
 with source as (
     select * from {{ source('snowflake_raw_stripe', 'payment') }}
 
