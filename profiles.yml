@@ -1,0 +1,17 @@
+jaffle-shop:  # the name of the profile which matches the one in `dbt_project.yml`
+  target: dev  # the default target environment
+  outputs:
+    dev:
+      type: snowflake  # type of data warehouse
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT_ID') }}"
+
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE')}}"
+
+      private_key_path: "{{ env_var('SNOWFLAKE_KEY_PATH') }}"
+
+      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
+      threads: 4  # number of threads for parallel execution
+      query_tags: queried_by_local_data_engineer  # tags queries with this string

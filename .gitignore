@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+*.py[cod]
+*.egg
+build
+htmlcov
+
+.user.yml
+snowflake.key
+snowflake.p8
+.env
+target/

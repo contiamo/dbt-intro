@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: snowflake_raw_jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: orders
+        description: Stuff that's been ordered
+        columns:
+          - name: id
+          - name: user_id
+          - name: order_date
+          - name: status
+
+      - name: customers
+
+  - name: snowflake_raw_stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment

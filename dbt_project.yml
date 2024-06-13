@@ -1,0 +1,24 @@
+name: "jaffle_shop"  # the name of your dbt project
+
+config-version: 2  # the version of the config schema
+version: "0.1"  # version of your dbt project
+
+profile: "jaffle-shop" # the name of the profile to use from profiles.yml
+
+model-paths: ["models"]  # the dir where your dbt models (SQL files) are
+test-paths: ["tests"]  # the dir where your tests are
+macro-paths: ["macros"]  # the dir where your macros are
+
+target-path: "target"  # the target where compiled SQL files and other target outputs are stored
+clean-targets:  # specifies dirs to be cleaned when running `dbt clean`
+    - "target"
+    - "dbt_modules"
+    - "logs"
+
+require-dbt-version: [">=1.0.0", "<2.0.0"]  # dbt version range to use for this project
+
+models:
+  jaffle_shop:
+    staging:  # all models in `models/staging/` path
+      +materialized: view  # materialize all models in jaffle_shop as views...
+      +database: "STAGING" # ... then store in the STAGING database
